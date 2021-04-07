@@ -1,8 +1,8 @@
-TinyAgo.js
+TinyAgoRu.js
 ==========
 
-TinyAgo.js is a tiny (180 bytes when minified) JavaScript library that converts
-timestamps into relative time (a.k.a. "time ago").
+TinyAgoRu.js is a tiny (506 bytes when minified) JavaScript library that converts
+timestamps into relative time in russian (a.k.a. "time ago").
 
 Usage
 -----
@@ -14,10 +14,10 @@ method), and returns a string with the relative time:
 
 ```javascript
 var d = new Date('January 1, 2014');
-console.log(ago(d.getTime())); // -> '7 months' (assuming it's August 2014)
+console.log(ago(d.getTime())); // -> '7 месяцев' (assuming it's August 2014)
 ```
 
-As shown in the above example, the function does not return the `'ago'` suffix.
+As shown in the above example, the function does not return the `'назад'` suffix.
 This is left as an exercise for the reader.
 
 ### Dates in the future
@@ -28,8 +28,8 @@ can also work with future dates:
 ```javascript
 function agofromnow(v) {
     if (v > Date.now())
-        return ago(2 * Date.now() - v) + ' from now';
+        return 'через ' + ago(2 * Date.now() - v);
     else
-        return ago(v) + ' ago';
+        return ago(v) + ' назад';
 }
 ```
